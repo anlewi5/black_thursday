@@ -15,7 +15,7 @@ class TestSalesAnalyst < Minitest::Test
     csv_hash = {
       :items     => "./test/test_fixtures/items_medium.csv",
       :merchants => "./test/test_fixtures/merchants_medium.csv",
-      :invoices => ".//test/test_fixtures/invoices_short.csv",
+      :invoices => ".//test/test_fixtures/invoices_medium.csv",
       :invoice_items => "./data/invoice_items.csv",
       :transactions => "./test/test_fixtures/transactions_medium.csv",
       :customers => "./test/test_fixtures/customers_medium.csv"
@@ -112,9 +112,21 @@ class TestSalesAnalyst < Minitest::Test
   #   assert_equal [], sa.top_revenue_earners(5)
   # end
 
-  def test_it_finds_most_sold_item_for_merchant
+  # def test_it_finds_most_sold_item_for_merchant
+  #
+  # assert_equal [], sa.most_sold_item_for_merchant(12334768)
+  # end
+  #
+  # def test_it_finds_valid_merchant_invoices
+  #   assert_instance_of Invoice, sa.valid_merchant_invoices(12334768)[0]
+  # end
+  #
+  # def test_it_gets_invoice_id
+  #   assert_equal [240, 1187], sa.get_invoice_id(12334768)
+  # end
 
-  assert_equal [], sa.most_sold_item_for_merchant(12334768)
+  def test_it_gets_invoice_items
+    assert_equal [], sa.best_item_for_merchant(12334768)
   end
 
 end
